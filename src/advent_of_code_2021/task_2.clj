@@ -26,3 +26,26 @@
                         (- vertical value)
                         (next input))))
         (* horizontal vertical)))))
+
+(defn solve-part-2 []
+  (let [input (read-input)]
+    (loop [horizontal 0
+           vertical 0
+           aim 0
+           input input]
+      (if (seq input)
+        (let [[direction value] (first input)]
+          (case direction
+            "forward" (recur (+ horizontal value)
+                             (+ vertical (* aim value))
+                             aim
+                             (next input))
+            "down" (recur horizontal
+                          vertical
+                          (+ aim value)
+                          (next input))
+            "up" (recur horizontal
+                        vertical
+                        (- aim value)
+                        (next input))))
+        (* horizontal vertical)))))
