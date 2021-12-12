@@ -25,7 +25,7 @@
   "If we took trinities, how many of them are larger than the sum of the previous trinity?
   (B + C + D) > (A + B + C)
   D > A
-  A + 3 > 3
+  A + 3 > A
   =>> How many measurements are greater than the one 3 places before this one?"
   []
   (let [input (process-input)]
